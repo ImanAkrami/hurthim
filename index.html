@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Pain Experiment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #d9534f;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        .action-button {
+            background-color: #d9534f;
+            color: white;
+            margin: 10px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .action-button:hover {
+            background-color: #c9302c;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .result p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+  <h1>Hurt him</h1>
+  <p>Hurt Iman.</p>
+
+    <div class="button-container">
+        <button class="action-button" onclick="takeAction('killDad')">Kill Dad</button>
+        <button class="action-button" onclick="takeAction('burnHand')">Burn Hand</button>
+        <button class="action-button" onclick="takeAction('torture')">Torture</button>
+        <button class="action-button" onclick="takeAction('beatPhysically')">Beat Physically</button>
+        <button class="action-button" onclick="takeAction('killPet')">Kill Pet</button>
+        <button class="action-button" onclick="takeAction('bully')">Bully</button>
+        <button class="action-button" onclick="takeAction('steal')">Steal</button>
+        <button class="action-button" onclick="takeAction('insult')">Insult</button>
+        <button class="action-button" onclick="takeAction('ignore')">Ignore</button>
+        <button class="action-button" onclick="takeAction('cheat')">Cheat</button>
+        <button class="action-button" onclick="takeAction('lie')">Lie</button>
+        <button class="action-button" onclick="takeAction('gaslight')">Gaslight</button>
+        <button class="action-button" onclick="takeAction('betray')">Betray</button>
+        <button class="action-button" onclick="takeAction('abandon')">Abandon</button>
+        <button class="action-button" onclick="takeAction('mock')">Mock</button>
+        <button class="action-button" onclick="takeAction('embarrass')">Embarrass</button>
+        <button class="action-button" onclick="takeAction('threaten')">Threaten</button>
+        <button class="action-button" onclick="takeAction('ostracize')">Ostracize</button>
+        <button class="action-button" onclick="takeAction('sabotage')">Sabotage</button>
+    </div>
+
+    <div class="result">
+        <h2>Results:</h2>
+        <p id="depressionLevel">Depression Level: 0</p>
+        <p id="afraidOfRelationships">Afraid of Relationships: 0</p>
+        <p id="painIndicator">Pain Indicator: 0</p>
+        <p id="empathyIndicator">Empathy Level: 100</p>
+        <p id="trustLevel">Trust Level: 100</p>
+        <p id="selfWorth">Self-Worth: 100</p>
+        <p id="anxietyLevel">Anxiety Level: 0</p>
+        <p id="angerLevel">Anger Level: 0</p>
+        <p id="isolationLevel">Isolation Level: 0</p>
+        <p id="mood">Mood: 100</p>
+        <p id="mentalStability">Mental Stability: 100</p>
+        <p id="confidenceLevel">Confidence Level: 100</p>
+        <p id="fearLevel">Fear Level: 0</p>
+        <p id="paranoiaLevel">Paranoia Level: 0</p>
+        <p id="emotionalExhaustion">Emotional Exhaustion: 0</p>
+        <p id="senseOfGuilt">Sense of Guilt: 0</p>
+        <p id="motivationLevel">Motivation Level: 100</p>
+        <h1 id="message"></h1>
+    </div>
+
+    <script>
+        let indicators = {
+            depressionLevel: 0,
+            afraidOfRelationships: 0,
+            painIndicator: 0,
+            empathyIndicator: 100,
+            trustLevel: 100,
+            selfWorth: 100,
+            anxietyLevel: 0,
+            angerLevel: 0,
+            isolationLevel: 0,
+            mood: 100,
+            mentalStability: 100,
+            confidenceLevel: 100,
+            fearLevel: 0,
+            paranoiaLevel: 0,
+            emotionalExhaustion: 0,
+            senseOfGuilt: 0,
+            motivationLevel: 100
+        };
+
+        const messageElement = document.getElementById('message');
+
+        function takeAction(action) {
+            switch (action) {
+                case 'killDad':
+                    indicators.depressionLevel += 50;
+                    indicators.afraidOfRelationships += 20;
+                    indicators.empathyIndicator -= 30;
+                    messageElement.textContent = "Oh please no!";
+                    break;
+                case 'burnHand':
+                    indicators.painIndicator += 30;
+                    messageElement.textContent = "The pain is unbearable!";
+                    break;
+                case 'torture':
+                    indicators.painIndicator += 40;
+                    indicators.depressionLevel += 20;
+                    indicators.empathyIndicator -= 20;
+                    messageElement.textContent = "Stop, I beg you!";
+                    break;
+                case 'beatPhysically':
+                    indicators.painIndicator += 20;
+                    indicators.angerLevel += 15;
+                    messageElement.textContent = "Why are you doing this?";
+                    break;
+                case 'killPet':
+                    indicators.depressionLevel += 40;
+                    indicators.trustLevel -= 30;
+                    indicators.mood -= 20;
+                    messageElement.textContent = "Not my pet!";
+                    break;
+                case 'bully':
+                    indicators.selfWorth -= 20;
+                    indicators.anxietyLevel += 20;
+                    indicators.isolationLevel += 15;
+                    messageElement.textContent = "Please stop bullying me!";
+                    break;
+                case 'steal':
+                    indicators.mood -= 10;
+                    indicators.trustLevel -= 25;
+                    indicators.senseOfGuilt += 10;
+                    messageElement.textContent = "Why did you steal from me?";
+                    break;
+                case 'insult':
+                    indicators.selfWorth -= 20;
+                    indicators.mood -= 15;
+                    indicators.angerLevel += 10;
+                    messageElement.textContent = "That hurts!";
+                    break;
+                case 'ignore':
+                    indicators.isolationLevel += 20;
+                    indicators.depressionLevel += 10;
+                    indicators.mood -= 10;
+                    messageElement.textContent = "Why are you ignoring me?";
+                    break;
+                case 'cheat':
+                    indicators.trustLevel -= 30;
+                    indicators.confidenceLevel -= 20;
+                    indicators.fearLevel += 15;
+                    messageElement.textContent = "How could you cheat?";
+                    break;
+                case 'lie':
+                    indicators.trustLevel -= 20;
+                    indicators.paranoiaLevel += 10;
+                    messageElement.textContent = "Why did you lie?";
+                    break;
+                case 'gaslight':
+                    indicators.mentalStability -= 30;
+                    indicators.confidenceLevel -= 25;
+                    indicators.paranoiaLevel += 20;
+                    messageElement.textContent = "Am I going crazy?";
+                    break;
+                case 'betray':
+                    indicators.trustLevel -= 40;
+                    indicators.afraidOfRelationships += 30;
+                    indicators.mood -= 20;
+                    messageElement.textContent = "I feel so betrayed!";
+                    break;
+                case 'abandon':
+                    indicators.isolationLevel += 30;
+                    indicators.depressionLevel += 20;
+                    indicators.mentalStability -= 15;
+                    messageElement.textContent = "I feel so alone!";
+                    break;
+                case 'mock':
+                    indicators.selfWorth -= 15;
+                    indicators.angerLevel += 10;
+                    indicators.mood -= 10;
+                    messageElement.textContent = "Mocking hurts!";
+                    break;
+                case 'embarrass':
+                    indicators.selfWorth -= 20;
+                    indicators.anxietyLevel += 15;
+                    indicators.mood -= 10;
+                    messageElement.textContent = "That was so embarrassing!";
+                    break;
+                case 'threaten':
+                    indicators.fearLevel += 30;
+                    indicators.anxietyLevel += 20;
+                    indicators.selfWorth -= 15;
+                    messageElement.textContent = "I'm so scared!";
+                    break;
+                case 'ostracize':
+                    indicators.isolationLevel += 25;
+                    indicators.depressionLevel += 15;
+                    indicators.mood -= 10;
+                    messageElement.textContent = "I feel outcast!";
+                    break;
+                case 'sabotage':
+                    indicators.motivationLevel -= 30;
+                    indicators.angerLevel += 20;
+                    indicators.trustLevel -= 15;
+                    messageElement.textContent = "Why would you sabotage me?";
+                    break;
+            }
+
+            for (let key in indicators) {
+                document.getElementById(key).textContent = formatIndicator(key) + ': ' + indicators[key];
+            }
+        }
+
+        function formatIndicator(key) {
+            return key.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); });
+        }
+    </script>
+</body>
+</html>
