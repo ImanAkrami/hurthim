@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hurt him</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #d9534f;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        .action-button {
+            background-color: #d9534f;
+            color: white;
+            margin: 10px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .action-button:hover {
+            background-color: #c9302c;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .result p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hurt him</h1>
+    <p>Hurt Iman.</p>
+
+    <div class="button-container">
+        <button class="action-button" onclick="takeAction('killDad')">Kill Dad</button>
+        <button class="action-button" onclick="takeAction('burnHand')">Burn Hand</button>
+        <button class="action-button" onclick="takeAction('torture')">Torture</button>
+        <button class="action-button" onclick="takeAction('beatPhysically')">Beat Physically</button>
+        <button class="action-button" onclick="takeAction('killPet')">Kill Pet</button>
+        <button class="action-button" onclick="takeAction('bully')">Bully</button>
+        <button class="action-button" onclick="takeAction('steal')">Steal</button>
+        <button class="action-button" onclick="takeAction('insult')">Insult</button>
+        <button class="action-button" onclick="takeAction('ignore')">Ignore</button>
+        <button class="action-button" onclick="takeAction('cheat')">Cheat</button>
+        <button class="action-button" onclick="takeAction('lie')">Lie</button>
+        <button class="action-button" onclick="takeAction('gaslight')">Gaslight</button>
+        <button class="action-button" onclick="takeAction('betray')">Betray</button>
+        <button class="action-button" onclick="takeAction('abandon')">Abandon</button>
+        <button class="action-button" onclick="takeAction('mock')">Mock</button>
+        <button class="action-button" onclick="takeAction('embarrass')">Embarrass</button>
+        <button class="action-button" onclick="takeAction('threaten')">Threaten</button>
+        <button class="action-button" onclick="takeAction('ostracize')">Ostracize</button>
+        <button class="action-button" onclick="takeAction('sabotage')">Sabotage</button>
+    </div>
+
+    <div class="result">
+        <h2>Results:</h2>
+        <h1 id="message">Something changed inside this person forever... you know what.</h1>
+    </div>
+
+    <script>
+        const messages = [
+            "Something changed inside this person forever... you know what.",
+            "A deep wound has been inflicted... it's not visible, but it's there.",
+            "The light in their eyes dimmed ever so slightly.",
+            "A part of them will never be the same.",
+            "You can sense a shift in their soul.",
+            "An invisible scar has formed.",
+            "This action will echo in their heart.",
+            "A shadow was cast on their spirit.",
+            "They'll carry this weight indefinitely.",
+            "A silent tear fell within them.",
+            "An intangible change took place."
+        ];
+
+        function getRandomMessage() {
+            return messages[Math.floor(Math.random() * messages.length)];
+        }
+
+        function takeAction(action) {
+            // Update message
+            document.getElementById('message').textContent = getRandomMessage();
+        }
+    </script>
+</body>
+</html>
